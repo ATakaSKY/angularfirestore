@@ -1,0 +1,44 @@
+
+  <!-- <form (ngSubmit)="addItem()">
+    
+  </form>   -->
+
+
+  <div *ngIf="items?.length > 0; else noItems">
+      <ul class="collection" *ngFor="let item of items">
+        <li class="collection-item" (dblclick)="deleteItem($event, item)">
+          <strong>{{item.title}}</strong> : {{item.description}}
+          <a href="#" class="secondary-content"> 
+            <i *ngIf="!editItemFlag" class="fa fa-pencil" (click)="editFlagOn($event, item)"></i>
+            <i *ngIf="editItemFlag" class="fa fa-compress" (click)="clearState()"></i>
+          </a>
+
+          <div *ngIf="editItemFlag && item.id == itemToEdit.id">
+             <form (ngSubmit)="updateItem(item)">
+
+              <div class="row">
+                <div class="input-field col s6">
+                  <input  placeholder="title" type="text" [(ngModel)]="item.title" name="title" class="validate">
+                  
+                </div>
+                <div class="input-field col s6">
+                  <input type="text" placeholder="description" [(ngModel)]="item.description" name="description" class="validate">
+                  
+                </div>
+              </div>
+
+              <button class="waves-effect waves-light btn orange" type="submit">Update Item</button>
+              <button class="waves-effect waves-light btn red" type="submit" (click)="deleteItem($event,item)">Delete Item</button>
+
+            </form>
+          </div>
+
+        </li>
+      </ul>
+    </div> 
+    
+    <ng-template #noItems>
+      <hr>
+      <h5>No Items Present</h5>
+    </ng-template>
+  

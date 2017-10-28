@@ -1,6 +1,19 @@
-# Cloudfirebase
+# Angular FireStore App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.2.
+This app shows you how to implement Angular, AngularFire2 and Firebase FireStore
+
+### Version
+1.0.0
+
+### Usage
+
+## Install the dependencies
+
+````
+$ npm install
+````
+
+## Add your Firebase info to environment.ts/environment.prod.ts
 
 ## Development server
 
@@ -21,7 +34,6 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 ## Running end-to-end tests
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
 
 ## Further help
 
